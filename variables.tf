@@ -246,7 +246,7 @@ variable "advanced_options" {
 
 variable "auto_tune_options" {
   type        = map(string)
-  default     = null
+  default     = {}
   description = "Key-value string pairs to specify auto_tune_options needed for engine version >= 6.8"
 }
 
