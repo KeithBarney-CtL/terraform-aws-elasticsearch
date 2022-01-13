@@ -244,6 +244,12 @@ variable "advanced_options" {
   description = "Key-value string pairs to specify advanced configuration options"
 }
 
+variable "auto_tune_options" {
+  type        = map(string)
+  default     = null
+  description = "Key-value string pairs to specify auto_tune_options needed for engine version >= 6.8"
+}
+
 variable "elasticsearch_subdomain_name" {
   type        = string
   default     = ""
