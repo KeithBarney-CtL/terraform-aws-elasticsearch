@@ -109,6 +109,8 @@ resource "aws_elasticsearch_domain" "default" {
   elasticsearch_version = var.elasticsearch_version
 
   advanced_options = var.advanced_options
+    
+  auto_tune_options = var.auto_tune_options
 
   advanced_security_options {
     enabled                        = var.advanced_security_options_enabled
