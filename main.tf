@@ -125,7 +125,7 @@ resource "aws_elasticsearch_domain" "default" {
 
         duration {
           unit  = auto_tune_options.value["maint_sched_unit"]
-          value = auto_tune_options.value[maint_sched_value]
+          value = auto_tune_options.value["maint_sched_value"]
         } # duration
       } # maint schedule
       
