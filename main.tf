@@ -116,16 +116,16 @@ resource "aws_elasticsearch_domain" "default" {
     
     content {
     
-      desired_state       = auto_tune_options.desired_state
-      rollback_on_disable = auto_tune_options.rollback_on_disable
+      desired_state       = auto_tune_options.value["desired_state"]
+      rollback_on_disable = auto_tune_options.value["rollback_on_disable"]
 
       maintenance_schedule {
-        cron_expression_for_recurrence = auto_tune_options.maint_sched_cron
-        start_at                       = auto_tune_options.maint_sched_start
+        cron_expression_for_recurrence = auto_tune_options.value["maint_sched_cron"]
+        start_at                       = auto_tune_options.value["maint_sched_start"]
 
         duration {
-          unit  = auto_tune_options.maint_sched_unit
-          value = auto_tune_options.maint_sched_value
+          unit  = auto_tune_options.value["maint_sched_unit"]
+          value = auto_tune_options.value[maint_sched_value]
         } # duration
       } # maint schedule
       
