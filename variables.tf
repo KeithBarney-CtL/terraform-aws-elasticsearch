@@ -244,6 +244,12 @@ variable "advanced_options" {
   description = "Key-value string pairs to specify advanced configuration options"
 }
 
+variable "auto_tune_config" {
+  type        = map(string)
+  default     = {}
+  description = "Key-value string pairs to specify auto_tune_options"  
+}  
+ 
 variable "auto_tune_enabled" {
   type    = bool
   default = false 
