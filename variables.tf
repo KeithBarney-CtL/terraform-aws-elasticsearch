@@ -259,7 +259,7 @@ variable "auto_tune_config" {
     )
   )
   default     = [{
-        desired_state       = "ENABLED"
+        desired_state       = "DISABLED"
         rollback_on_disable = "NO_ROLLBACK"
         maint_sched_cron    = "cron(0 0 ? * 1 *)"
         maint_sched_start   = "2022-01-14T18:00:00Z"
