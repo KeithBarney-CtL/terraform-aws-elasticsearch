@@ -244,49 +244,8 @@ variable "advanced_options" {
   description = "Key-value string pairs to specify advanced configuration options"
 }
 
+
 variable "auto_tune_config" {
-  type        = map(string)
-  default     = {}
-  description = "Key-value string pairs to specify auto_tune_options"  
-}  
- 
-variable "auto_tune_enabled" {
-  type    = bool
-  default = false 
-}
-
-variable "auto_tune_desired_state" {
-  type = string
-  default = "DISABLED"
-}
-
-variable "auto_tune_rollback_on_disable" {
-  type = string
-  default = "NO_ROLLBACK"
-}  
-
-variable "auto_tune_maint_sched_cron" {
-  type = string
-  default = "cron(0 0 ? * 1 *)"
-}
-
-variable "auto_tune_maint_sched_start" {
-  type = string
-  default = "2022-01-14T18:00:00Z"
-}  
-
-variable "auto_tune_maint_sched_unit" {
-  type = string
-  default = "HOURS"
-}
-
-variable "auto_tune_maint_sched_value" {
-  type = number
-  default = 2
-  description = "Quantifier for auto_tune_maint_sched_unit"
-}
-
-variable "auto_tune_options" {
   description = "key value pair of auto_tune_options values"
   type        = list(object(
         {
@@ -300,7 +259,7 @@ variable "auto_tune_options" {
     )
   )
   default     = [{
-        desired_state       = "DISABLED"
+        desired_state       = "ENABLED"
         rollback_on_disable = "NO_ROLLBACK"
         maint_sched_cron    = "cron(0 0 ? * 1 *)"
         maint_sched_start   = "2022-01-14T18:00:00Z"
