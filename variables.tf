@@ -286,12 +286,30 @@ variable "auto_tune_maint_sched_value" {
   description = "Quantifier for auto_tune_maint_sched_unit"
 }
 
-
 variable "auto_tune_options" {
-  type        = map(string)
-  default     = {}
-  description = "Key-value string pairs to specify auto_tune_options needed for engine version >= 6.8"
+  description = "key value pair of auto_tune_options values"
+  type        = list(object(
+        {
+                desired_state       = string
+                rollback_on_disable = string
+                maint_sched_cron    = string
+                maint_sched_start   = string
+                maint_sched_unit    = string
+                maint_sched_value   = number
+        }
+    )
+  )
+  default     = [{
+        desired_state       = "DISABLED"
+        rollback_on_disable = "NO_ROLLBACK"
+        maint_sched_cron    = "cron(0 0 ? * 1 *)"
+        maint_sched_start   = "2022-01-14T18:00:00Z"
+        maint_sched_unit    = "HOURS"
+        maint_sched_value   = 2
+  }]
+
 }
+
 
 variable "elasticsearch_subdomain_name" {
   type        = string
