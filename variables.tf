@@ -283,7 +283,7 @@ variable "auto_tune_maint_sched_unit" {
 variable "auto_tune_maint_sched_value" {
   type = number
   default = 2
-  description "Quantifier for auto_tune_maint_sched_unit"
+  description = "Quantifier for auto_tune_maint_sched_unit"
 }
 
 
